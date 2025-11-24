@@ -401,13 +401,14 @@ metadata:
   name: grafana
   namespace: observability
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: grafana
   ports:
   - name: http
     port: 3000
     targetPort: 3000
+    nodePort: 30300
 ---
 apiVersion: apps/v1
 kind: Deployment
